@@ -1,0 +1,33 @@
+services:
+
+  mysql00:
+    image: mysql:8-oracle
+    environment:
+      MYSQL_DATABASE: database
+      MYSQL_USER: user_bd
+      MYSQL_PASSWORD: 12345abcde
+      MYSQL_ROOT_PASSWORD: root
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3316:3306
+    volumes:
+      - mysql_data00:/var/lib/mysql
+
+  phpmyadmin00:
+    image: phpmyadmin
+    environment:
+      - PMA_HOST=mysql00
+      - PMA_PORT=3306
+      - PMA_ABSOLUTE_URI=http://localhost:8090
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    volumes:
+      - phpmyadmin00_sessions:/sessions
+    ports:
+      - 8090:80
+    depends_on:
+      - mysql00
+
+volumes:
+  mysql_data00:
+  phpmyadmin00_sessions:
