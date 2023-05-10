@@ -19,3 +19,9 @@ Lanzar la aplicación:
 ```
 docker compose run --rm app00
 ```
+
+Abrir un shell en el contenedor de la aplicación:
+
+```
+docker compose run --rm app00 /bin/bash
+```
