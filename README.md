@@ -14,3 +14,8 @@ Construir el contenedor de la aplicación:
 docker compose build app00
 ```
 
+Lanzar la aplicación:
+
+```
+docker compose run --rm app00
+```
