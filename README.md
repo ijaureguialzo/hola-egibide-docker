@@ -2,26 +2,36 @@
 
 Ejemplo de aplicación Maven en un contenedor Docker.
 
-Arrancar el servidor de base de datos:
+## Poner en marcha la aplicación
 
-```
-docker compose up -d phpmyadmin00
-```
+1. Arrancar el servidor de base de datos:
 
-Construir el contenedor de la aplicación:
+    ```
+    docker compose up -d phpmyadmin00
+    ```
 
-```
-docker compose build app00
-```
+2. Construir el contenedor de la aplicación:
 
-Lanzar la aplicación:
+    ```
+    docker compose build app00
+    ```
 
-```
-docker compose run --rm app00
-```
+3. Lanzar la aplicación:
 
-Abrir un shell en el contenedor de la aplicación:
+    ```
+    docker compose run --rm app00
+    ```
 
-```
-docker compose run --rm app00 /bin/bash
-```
+## Utilidades
+
+- Abrir un shell en el contenedor de la aplicación:
+
+    ```
+    docker compose run --rm app00 /bin/bash
+    ```
+
+- Borrar todo:
+
+    ```
+    docker compose down -v
+    ```
