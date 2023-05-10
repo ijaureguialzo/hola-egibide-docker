@@ -28,6 +28,12 @@ services:
     depends_on:
       - mysql00
 
+  app00:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: mvn exec:java
+
 volumes:
   mysql_data00:
   phpmyadmin00_sessions:

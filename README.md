@@ -7,3 +7,10 @@ Arrancar el servidor de base de datos:
 ```
 docker compose up -d phpmyadmin00
 ```
+
+Construir el contenedor de la aplicación:
+
+```
+docker compose build app00
+```
+
