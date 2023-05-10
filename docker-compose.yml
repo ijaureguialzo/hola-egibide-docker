@@ -33,7 +33,10 @@ services:
       context: .
       dockerfile: Dockerfile
     command: mvn exec:java
+    volumes:
+      - app_data00:/root
 
 volumes:
   mysql_data00:
   phpmyadmin00_sessions:
+  app_data00:
