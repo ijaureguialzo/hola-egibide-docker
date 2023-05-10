@@ -32,6 +32,7 @@ public class Main {
         } catch (SQLException ex) {
             // Mostrar errores de conexion o consulta
             System.out.println(" Mi Error: " + ex.getMessage());
+            System.exit(1);
         } finally {
             // Cerrar los objetos de conexion
             try {
@@ -40,7 +41,10 @@ public class Main {
                 if (conn != null) conn.close();
             } catch (SQLException ex) {
                 System.out.println("Error al cerrar la conexion: " + ex.getMessage());
+                System.exit(1);
             }
         }
+
+        System.exit(0);
     }
 }
